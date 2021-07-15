@@ -35,6 +35,8 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to EsiAudit-Optimisation application." });
 });
 //routes
+require('./routes/gate.route')(app);
+require('./routes/saver.route')(app);
 
 
 const PORT = 8081;

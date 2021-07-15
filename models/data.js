@@ -24,4 +24,4 @@ var data=new Schema({
 });
 
 
-module.exports = mongoose.model('request',request);
+module.exports = mongoose.model('data',data);
