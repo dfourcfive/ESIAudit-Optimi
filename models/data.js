@@ -8,7 +8,7 @@ var data=new Schema({
         require:true  
     },
     result:{
-        type:String,
+        type:Object,
         require:true,
     },   
     title:{
