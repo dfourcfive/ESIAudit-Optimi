@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.post("/api/data/save",controller.saveQuery);
   app.get("/api/data/save",controller.GetSavedQueries);
   app.get("/api/data/save/:title",controller.getByTitle);
-  app.remove("/api/data/save",controller.flush);
-  app.remove("/api/data/save/:title",controller.removeBytitle);
+  app.delete("/api/data/save",controller.flush);
+  app.delete("/api/data/save/:title",controller.removeBytitle);
 
 }

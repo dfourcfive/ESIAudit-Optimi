@@ -18,6 +18,10 @@ var data=new Schema({
     description:{
         type:String,
         require:true,
+    },
+    time:{
+        type : Date,
+        default: Date.now 
     }
 },{
     collection:'data'
