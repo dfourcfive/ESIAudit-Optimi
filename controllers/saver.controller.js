@@ -3,10 +3,10 @@ const data = require('../models/data');
 
 exports.saveQuery=(req,res)=>{
     let element = new data({
-        sql:req.sql,
-        result:req.result,
-        title:req.title,
-        description:req.description,
+        sql:req.body.sql,
+        result:req.body.result,
+        title:req.body.title,
+        description:req.body.description,
     });
     element.save();
 }
