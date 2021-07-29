@@ -39,7 +39,7 @@ require('./routes/gate.route')(app);
 require('./routes/saver.route')(app);
 
 
-const PORT = 8081;
+const PORT = 8082;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });

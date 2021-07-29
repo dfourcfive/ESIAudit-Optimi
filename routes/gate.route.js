@@ -1,6 +1,14 @@
-const controller = require("../controllers/activite.controller");
+const controller = require("../controllers/cach.controller");
 
 
 
-
-  app.get("/api/data/activites/:id",controller.getOne);
+module.exports = function(app) {
+  app.use(function(req, res, next) {
+    res.header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    );
+    next();
+  });
+app.get("/api/data/gate",controller.cachSystem);
+}
