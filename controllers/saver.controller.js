@@ -8,7 +8,15 @@ exports.saveQuery=(req,res)=>{
         title:req.body.title,
         description:req.body.description,
     });
-    element.save();
+    element.save({},function(err){
+        if(!err){
+            res.send('added');
+            console.log('added');
+        }else{
+            res({err});
+            console.log(err);
+        }
+    });
 }
 
 exports.GetSavedQueries=(req,res)=>{
@@ -29,6 +37,7 @@ exports.GetSavedQueries=(req,res)=>{
 exports.flush=(req,res)=>{
     data.deleteMany({},function(err){
         if(!err){
+            res('deleted');
             console.log('all deleted');
         }else{
             res({err});
@@ -54,6 +63,7 @@ exports.getByTitle=(req,res)=>{
 exports.removeBytitle=(req,res)=>{
     data.remove({'title': req.params.title},function(err){
         if(!err){
+            res.send('deleted');
             console.log('all deleted');
         }else{
             res({err});
